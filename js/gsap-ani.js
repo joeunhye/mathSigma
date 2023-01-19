@@ -6,8 +6,11 @@ anySectionEls.forEach((el,i)=>{
     ScrollTrigger.create({
         trigger:el,
         toggleClass:'active',
-        start:"top 90%",
-        end:"bottom 10%",
+        // start:"top 90%",
+        // end:"bottom 10%",
+        start: "center center",
+		end: "bottom top",
+        markers: true,
         // scrub:true,
     });
 });
@@ -52,15 +55,27 @@ gsap.timeline({
 });
 
 //Section4 Gsap Control
+const lineAny = gsap.to(".sec04 .line-bg", {
+    y: -20,
+    autoAlpha: 1,
+    duration: 1,
+});
+
 gsap.timeline({
 	scrollTrigger: {
 		trigger: ".sec04",
 		start: "center center",
 		end: "bottom top",
 		scrub: 1,
+        toggleClass:'on',
 		pin: true,
+        
 	},
 })
+// .from(".sec04 .line-bg", {
+//     y: innerHeight * 1,
+//     opacity: 0,
+// })
 .from(".sec04 .anyText", {
     y: innerHeight * 1,
     stagger: {
@@ -96,92 +111,3 @@ gsap.timeline({
 .from(".sec05 .img-wrap", {
     y: innerHeight * 1,
 });
-
-// const anim5 = gsap.to(".sec05 .box", {
-// 	y: -100,
-// 	rotation: 360,
-// 	duration: 1,
-// 	stagger: 0.25,
-// });
-
-// ScrollTrigger.create({
-// 	trigger: ".sec05",
-// 	animation: anim5,
-// 	toggleActions: "restart pause restart pause",
-// 	// markers: true,
-// });
-
-
-
-// gsap.to(".cont-title2", {y: -60, opacity:1, duration: 1});
-// gsap.to('.sec02 .cont-title3', {
-//     y: -60,
-//     opacity:1, 
-//     duration: 1,
-//     // rotation: 360,
-//     scrollTrigger: {
-//         trigger: '.cont-title3',
-//         start: '0 70%',
-//         end: '100% 0',
-//         toggleClass: 'opacity',
-//         toggleActions: "restart none reverse none",
-//         markers: true,
-//     }
-// })
-
-// gsap.utils.toArray("section").forEach(section => {
-//     gsap.from(section.querySelectorAll("i, h3, p"), {
-//       scrollTrigger: section,
-//       autoAlpha: 0,
-//       y: 25,
-//       duration: 0.75,
-//       stagger: 0.25
-//     });
-// });
-
-// gsap.from('.line-1', {
-//     scrollTrigger: {
-//         trigger: '.line-1',
-//         scrub: true,
-//         start: 'top bottom',
-//         end: 'top top',
-//         //markers: true
-//     },
-//     scaleX: 0,
-//     transformOrigin: "left center", 
-//     ease: "none"
-// })
-
-// gsap.to(".sigma-items li", {duration: 1, y: -260, stagger: 1.5});
-
-// gsap.from('.sigma-items li', {
-//     scrollTrigger: {
-//         y: -260,
-//         duration: 1,
-//         stagger: 1.5,
-//         trigger: '.sigma-items li',
-//         // scrub: true,
-//         start: 'top bottom',
-//         end: 'top top',
-//         //markers: true
-//     },
-//     scaleX: 0,
-//     transformOrigin: "left center", 
-//     ease: "none"
-// })
-
-// gsap.to('.sigma-items li', {
-//     y: -60,
-//     autoAlpha: 1,
-//     stagger: 0.2,
-//     scrollTrigger: {
-//         trigger: '.sigma-items li',
-//         toggleActions: "restart pause resume pause",
-//         start: 'top bottom',
-//         end: 'top top',
-//         // start: '0 70%',
-//         // end: '100% 0',
-//         // scrub: true,
-//         markers: true,
-//     },
-// })

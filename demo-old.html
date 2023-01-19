@@ -28,20 +28,26 @@
     <!-- Section8 -->
     <section class="sec08 ac">
         <div class="wrap">
-            <h3 class="cont-title3">MathSigma A.I 데모</h3>
+            <h3 class="cont-title3">MathSigma  A.I 데모</h3>
             <hr>
             <div class="demo-wrap">
-                <div class="select-box">
-                    <button type="button" class="btn select-btn">CKEditor</button>
-                    <ul class="category" id="tab-button">
-                        <li><a href="#tab01">CKEditor</a></li>
-                        <li><a href="#tab02">SummerNote</a></li>
-                        <li><a href="#tab03">TinyMCE</a></li>
-                        <li><a href="#tab04">SmartEditor</a></li>
-                        <li><a href="#tab05">Moodle</a></li>
-                        <li><a href="#tab06">Canvas</a></li>
-                    </ul>
-                </div>
+                <ul class="category" id="tab-button">
+                    <li><a href="#tab01">CKEditor</a></li>
+                    <li><a href="#tab02">SummerNote</a></li>
+                    <li><a href="#tab03">TinyMCE</a></li>
+                    <li><a href="#tab04">SmartEditor</a></li>
+                    <li><a href="#tab05">Moodle</a></li>
+                    <li><a href="#tab06">Canvas</a></li>
+                </ul>
+
+                <select id="tab-select">
+                    <option value="#tab01">Tab 1</option>
+                    <option value="#tab02">Tab 2</option>
+                    <option value="#tab03">Tab 3</option>
+                    <option value="#tab04">Tab 4</option>
+                    <option value="#tab05">Tab 5</option>
+                    <option value="#tab06">Tab 6</option>
+                </select>
 
                 <div class="demo-editor">
                     <div id="tab01" class="tab-contents">
@@ -127,9 +133,9 @@
     <script>
     window.addEventListener('load', () => {
         // 에디터 선택 탭
-        const $selectBtnEl = document.querySelector('.select-btn');
-        const $tabButton = document.querySelector('.category');
-        const $tabButtonItem = document.querySelectorAll('.category li');
+        const $tabButton = document.querySelector('#tab-button');
+        const $tabButtonItem = document.querySelectorAll('#tab-button li');
+        const $tabSelect = document.querySelector('#tab-select');
         const $tabContents = document.querySelectorAll('.tab-contents');
         const $demoEditor = document.querySelector('.demo-editor');
 
@@ -152,12 +158,16 @@
             target.classList.add(activeClass);
             $demoEditor.querySelector('.active')?.classList.remove(activeClass)
             $tabContents[index].classList.add(activeClass)
+            $tabSelect.value = targetHref;
         })
 
-        $selectBtnEl.addEventListener('click', (e) => {
-            let target = e.target;
-            let isOn = e.target.parentNode.classList.contains('on');
-            isOn ? target.parentNode.classList.remove('on') : target.parentNode.classList.add('on');
+        $tabSelect.addEventListener('change', (e) => {
+            // let value = e.target.value;
+            let optIndex = $tabSelect.selectedIndex;
+            $tabButton.querySelector('.active')?.classList.remove(activeClass)
+            $tabButtonItem[optIndex].classList.add(activeClass);
+            $demoEditor.querySelector('.active')?.classList.remove(activeClass)
+            $tabContents[optIndex].classList.add(activeClass)
         })
 
         //클립보드

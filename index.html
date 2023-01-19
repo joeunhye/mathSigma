@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.polyfills.min.js" referrerpolicy="no-referrer"></script>
     <script defer src="./js/script.js"></script>
     <script defer src="./js/gsap-ani.js"></script>
 </head>
@@ -19,7 +19,7 @@
             <h1 class="logo"><a href="index.html"><img src="./images/logo.svg" alt="Math Sigma"></a></h1>
             <nav>
                 <ul>
-                    <li><a href="">주요기능</a></li>
+                    <li><a href="javascript:void(0)" class="anchor">주요기능</a></li>
                     <li><a href="./price.html">가격</a></li>
                     <li><a href="./demo.html">데모보기</a></li>
                 </ul>
@@ -34,7 +34,7 @@
                 웹용 수식편집기</h2>
             <p class="cont-text">웹에서 수식을 자유롭게 입력하고 수정가능<br />
                 Desktop 뿐만 아니라 Mobile 에서도 자유롭습니다.</p>
-                <div class="polygon-bg"></div>
+            <div class="polygon-bg"></div>
             <div class="btn-wrap">
                 <a href="" class="btn btn-black">데모</a>
                 <a href="" class="btn btn-white">지금 구매</a>
@@ -121,6 +121,9 @@
     <!-- Section4 -->
     <section class="sec04 ac">
         <div class="wrap">
+            <svg class="line-bg" xmlns="http://www.w3.org/2000/svg" width="1117.698" height="498.913" viewBox="0 0 1117.698 498.913">
+                <path class="line" id="패스_57282" data-name="패스 57282" d="M6.5,530.034S248.091,374.885,254.313,426.22C258.779,463.057,6.5,758.871,161.662,660.638,561.521,407.491,625.914,321.29,612.02,360.36s-236.286,339.8,494.156-163.278" transform="translate(2.482 -188.042)" fill="none" stroke="#eaf4f8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="13"/>
+            </svg> 
             <h3 class="cont-title3 anyText">인공지능기술을 활용한<br />
                 필기체 수식 인식</h3>
             <p class="cont-text anyText">Math Sigma 는 필기체를 인식해서 수식에서 편집이 가능한 디지털 수식으로 변환합니다.<br />
@@ -135,8 +138,11 @@
     </section>
 
     <!-- Section5 -->
-    <!-- <section class="sec05 reversal dark">
+    <section class="sec05 reversal dark">
         <div class="wrap">
+            <div class="circle-bg-s3"></div>
+            <div class="circle-bg-s4"></div>
+            <div class="circle-bg-s5"></div>
             <div class="cont-wrap flex-lay">
                 <div class="text-wrap">
                     <h3 class="cont-title3 anyText">위지윅(WYSIWYG)<br />
@@ -151,18 +157,20 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Section6 -->
-    <!-- <section class="sec06 reversal">
+    <section class="sec06 reversal">
         <div class="wrap">
             <div class="family-brand">
                 <div class="brand-logo">
                     <h2><img src="./images/logo-off2on.svg" alt=""></h2>
-                    <p class="cont-text al">비즈니스를 온라인으로
-                        결합할 수 있도록 
-                        도와주는 서비스</p>
-                    <img src="./images/logo-off2on-ko.svg" alt="">
+                    <div class="brand-comment">
+                        <p class="cont-text al">비즈니스를 온라인으로
+                            결합할 수 있도록 
+                            도와주는 서비스</p>
+                        <img src="./images/logo-off2on-ko.svg" alt="">
+                    </div>
                 </div>
                 <div class="brand-link">
                     <div class="brand-item">
@@ -195,10 +203,10 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Footer -->
-    <!-- <footer>
+    <footer>
         <div class="wrap">
             <div class="cont-wrap flex-lay">
                 <div class="address-wrap">
@@ -206,7 +214,7 @@
                     <div class="address"><span>06748</span><span> 서울시 서초구 강남대로 148, 3층 (양재동, 상록빌딩)</span><a href="javascript:void(0)" class="copy-link"><img src="./images/ic-link.svg" alt=""></a></div>
                     <ul class="contact">
                         <li><strong>TEL</strong>  <a href="tel:02-576-3776">02)576-3776</a></li>
-                        <li><strong>FAX</stron>  02)576-3741</li>
+                        <li><strong>FAX</strong>  02)576-3741</li>
                     </ul>
                     <p class="copyright">Copyrightⓒ 월드버텍(주), All Rights Reserved.</p>
                 </div>
@@ -219,6 +227,6 @@
                 </div>
             </div>
         </div>
-    </footer> -->
+    </footer>
 </body>
 </html>

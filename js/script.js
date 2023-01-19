@@ -1,14 +1,14 @@
 let winW;
 let scrollH;
-const headEl = document.querySelector('header');
+const $headEl = document.querySelector('header');
 
 
 // Header change
 function changeHead() {
     if(scrollH > 100) {
-        headEl.classList.add('on')
+        $headEl.classList.add('on')
     }else {
-        headEl.classList.remove('on')
+        $headEl.classList.remove('on')
     }
 }
 
@@ -20,4 +20,10 @@ function size() {
 window.addEventListener('scroll', ()=> {
     size();
     changeHead();
+})
+
+//주요기능 클릭 시 두 번째 섹션으로 이동
+const $anchorBtn = document.querySelector('.anchor');
+$anchorBtn.addEventListener('click', () => {
+    document.querySelector('.sec02').scrollIntoView({ behavior: 'smooth' });
 })
