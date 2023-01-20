@@ -172,7 +172,7 @@ header.full nav ul li:nth-child(3) {animation-delay: .4s;}
 @keyframes polygonShape {
     0% {
       clip-path: polygon(20% 0%, 100% 38%, 70% 90%, 0% 100%);
-      background: pink;
+      background: rgba(76,206,224,1);
     }
     50% {
       clip-path: polygon(0 46%, 100% 15%, 55% 74%, 0 100%);
@@ -180,7 +180,7 @@ header.full nav ul li:nth-child(3) {animation-delay: .4s;}
     }
     75% {
       clip-path: polygon(100% 38%, 100% 38%, 66% 100%, 0 53%);
-      background: cornflowerblue;
+      background: rgb(34,232,140);
     }
 }
 
@@ -443,8 +443,9 @@ footer select {width: 250px;height: 50px;background: none;border: 1px solid #D9D
     .sec01 .cont-title2, .sec01 .cont-text {order: 2;}
     .sec01 .btn-wrap {flex-wrap: wrap;gap: 20px;order: 3;margin: 40px 0 0 0;}
     .sec01 .btn-wrap a {width: 100%;}
-    .polygon-bg {width: 100px;height: 200px;top: 10%;}
+    .polygon-bg {width: 100px;height: 150px;top: 8%;}
     .circle-bg1, .circle-bg2 {width: 100px; height: 100px;}
+    .circle-bg1 {width: 80px; height: 80px; bottom: -30px;}
 
     /* Section2 */
     .sec02 {padding: 80px 0;}
