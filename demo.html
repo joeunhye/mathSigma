@@ -15,9 +15,13 @@
     <header>
         <div class="wrap header-in">
             <h1 class="logo"><a href="index.html"><img src="./images/logo.svg" alt="Math Sigma"></a></h1>
+            <!-- 모바일 메뉴 -->
+            <button type="button" class="btn trigger-btn">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
             <nav>
                 <ul>
-                    <li><a href="./index.html#sectionLink">주요기능</a></li>
+                    <li class="link-in"><a href="./index.html#sectionLink">주요기능</a></li>
                     <li><a href="./price.html">가격</a></li>
                     <li><a href="./demo.html">데모보기</a></li>
                 </ul>
@@ -76,25 +80,31 @@
                 <div class="code-copy-item">
                     <p class="code-title">근의 공식</p>
                     <textarea id="clipboard1" style="resize: none;">복사하기...1</textarea>
-                    <button class="btn clipBtn" data-clipboard-target="#clipboard1">
-                        Copy
-                    </button>
+                    <div class="clipBtn-wrap">
+                        <button class="btn clipBtn" data-clipboard-target="#clipboard1">
+                            Copy
+                        </button>
+                    </div>
                 </div>
 
                 <div class="code-copy-item">
                     <p class="code-title">방정식</p>
                     <textarea id="clipboard2" style="resize: none;">복사하기...2</textarea>
-                    <button class="btn clipBtn" data-clipboard-target="#clipboard2">
-                        Copy
-                    </button>
+                    <div class="clipBtn-wrap">
+                        <button class="btn clipBtn" data-clipboard-target="#clipboard2">
+                            Copy
+                        </button>
+                    </div>
                 </div>
 
                 <div class="code-copy-item">
                     <p class="code-title">연산</p>
                     <textarea id="clipboard3" style="resize: none;">복사하기...3</textarea>
-                    <button class="btn clipBtn" data-clipboard-target="#clipboard3">
-                        Copy
-                    </button>
+                    <div class="clipBtn-wrap">
+                        <button class="btn clipBtn" data-clipboard-target="#clipboard3">
+                            Copy
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,7 +116,7 @@
             <div class="cont-wrap flex-lay">
                 <div class="address-wrap">
                     <img src="./images/logo-white.svg" alt="" class="footer-logo">
-                    <div class="address"><span>06748</span><span> 서울시 서초구 강남대로 148, 3층 (양재동, 상록빌딩)</span><a href="javascript:void(0)" class="copy-link"><img src="./images/ic-link.svg" alt=""></a></div>
+                    <div class="address"><span>06748</span><span class="addr-text"> 서울시 서초구 강남대로 148, 3층 (양재동, 상록빌딩)</span><a href="javascript:void(0)" class="copy-link"><img src="./images/ic-link.svg" alt=""></a></div>
                     <ul class="contact">
                         <li><strong>TEL</strong>  <a href="tel:02-576-3776">02)576-3776</a></li>
                         <li><strong>FAX</strong>  02)576-3741</li>

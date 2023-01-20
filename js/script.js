@@ -22,8 +22,28 @@ window.addEventListener('scroll', ()=> {
     changeHead();
 })
 
-//주요기능 클릭 시 두 번째 섹션으로 이동
-// const $anchorBtn = document.querySelector('.anchor');
-// $anchorBtn.addEventListener('click', () => {
-//     document.querySelector('.sec02').scrollIntoView({ behavior: 'smooth' });
-// })
+//모바일 메뉴
+$headEl.addEventListener('click', (e) => {
+    if(e.target.matches('.link-in')) {
+        $headEl.classList.remove('full')
+    }
+})
+const $mbMenu = document.querySelector('.trigger-btn');
+$mbMenu.addEventListener('click', (e) => {
+    let target = e.currentTarget;
+    target.classList.toggle('on');
+    $headEl.classList.toggle('full')
+})
+
+//하단 주소 복사
+const $addressBtnEls = document.querySelector('.copy-link');
+$addressBtnEls.addEventListener('click', function() {
+    const valOfDIV = document.querySelector(".addr-text").textContent;
+    const textArea = document.createElement('textarea');
+    document.body.appendChild(textArea);
+    textArea.value = valOfDIV;
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('주소 복사 완료')
+})
