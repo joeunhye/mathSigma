@@ -17,7 +17,7 @@
             <h1 class="logo"><a href="index.html"><img src="./images/logo.svg" alt="Math Sigma"></a></h1>
             <nav>
                 <ul>
-                    <li><a href="javascript:void(0)" class="anchor">주요기능</a></li>
+                    <li><a href="./index.html#sectionLink">주요기능</a></li>
                     <li><a href="./price.html">가격</a></li>
                     <li><a href="./demo.html">데모보기</a></li>
                 </ul>
@@ -132,33 +132,38 @@
         const $tabButtonItem = document.querySelectorAll('.category li');
         const $tabContents = document.querySelectorAll('.tab-contents');
         const $demoEditor = document.querySelector('.demo-editor');
-
         let activeClass = 'active';
+
+        tabSelect();
 
         $tabButtonItem[0].classList.add(activeClass);
         $tabContents[0].classList.add(activeClass);
 
-        $tabButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (e.target.nodeName === 'UL') return;
+        function tabSelect() {
+            $selectBtnEl.addEventListener('click', (e) => {
+                let target = e.target;
+                let isOn = e.target.parentNode.classList.contains('on');
+                isOn ? target.parentNode.classList.remove('on') : target.parentNode.classList.add('on');
+            })
 
-            let target = e.target.closest("li");
-            let targetHref = e.target.getAttribute('href');
-            let isOn = target?.classList.contains(activeClass);
-            if (isOn) return;
-            const nodes = [...target?.parentElement.children];
-            const index = nodes.indexOf(target);
-            $tabButton.querySelector('.active')?.classList.remove(activeClass)
-            target.classList.add(activeClass);
-            $demoEditor.querySelector('.active')?.classList.remove(activeClass)
-            $tabContents[index].classList.add(activeClass)
-        })
-
-        $selectBtnEl.addEventListener('click', (e) => {
-            let target = e.target;
-            let isOn = e.target.parentNode.classList.contains('on');
-            isOn ? target.parentNode.classList.remove('on') : target.parentNode.classList.add('on');
-        })
+            $tabButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (e.target.nodeName === 'UL') return;
+                let target = e.target.closest("li");
+                let targetHref = e.target.getAttribute('href');
+                let targetText = e.target.textContent;
+                let isOn = target?.classList.contains(activeClass);
+                if (isOn) return;
+                const nodes = [...target?.parentElement.children];
+                const index = nodes.indexOf(target);
+                $tabButton.querySelector('.active')?.classList.remove(activeClass)
+                target.classList.add(activeClass);
+                $demoEditor.querySelector('.active')?.classList.remove(activeClass)
+                $tabContents[index].classList.add(activeClass)
+                $selectBtnEl.textContent = targetText;
+                $selectBtnEl.parentNode.classList.remove('on');
+            })
+        }
 
         //클립보드
         let Clipboard = new ClipboardJS('.clipBtn');
@@ -175,6 +180,7 @@
 
         })
 
+        
     })
 
     </script>

@@ -23,7 +23,7 @@ window.addEventListener('scroll', ()=> {
 })
 
 //주요기능 클릭 시 두 번째 섹션으로 이동
-const $anchorBtn = document.querySelector('.anchor');
-$anchorBtn.addEventListener('click', () => {
-    document.querySelector('.sec02').scrollIntoView({ behavior: 'smooth' });
-})
+// const $anchorBtn = document.querySelector('.anchor');
+// $anchorBtn.addEventListener('click', () => {
+//     document.querySelector('.sec02').scrollIntoView({ behavior: 'smooth' });
+// })

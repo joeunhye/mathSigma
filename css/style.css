@@ -184,7 +184,7 @@ header nav li a {font-size: 20px;}
 .sec04 img.math-view10 {max-width: 600px;}
 .sec04 img.math-view11 {width: 500px;position: absolute;left: 0;top: 17%;}
 .sec04 img.math-view12 {width: 500px;position: absolute;right: 0;top: -5%;}
-.line-bg {position: absolute;left: 0;}
+.line-bg {position: absolute;top: -16%;left: 0; width: 100%;}
 .line {
     stroke-dasharray: 3880;
     stroke-dashoffset: 3880;
@@ -361,7 +361,7 @@ footer select {width: 250px;height: 50px;background: none;border: 1px solid #D9D
     .brand-logo {margin-bottom: 30px;}
 
     /* Section7 */
-    .price-list > li {flex: 1 1 50%;}
+    .price-list > li {flex: 1 1 50%; margin-bottom: 20px;}
 
     /* Section8 */
     .sec08 .select-btn {display: block;}

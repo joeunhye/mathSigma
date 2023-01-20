@@ -10,7 +10,7 @@ anySectionEls.forEach((el,i)=>{
         // end:"bottom 10%",
         start: "center center",
 		end: "bottom top",
-        markers: true,
+        // markers: true,
         // scrub:true,
     });
 });
