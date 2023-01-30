@@ -38,7 +38,7 @@ gsap.timeline({
 		end: "top top",
 		scrub: 3,
 		pin: false,
-		markers: true,
+		// markers: true,
 	},
 })
 	.from(".sec03 .anyText", {
