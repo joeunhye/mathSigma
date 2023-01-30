@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="">
-        <meta property="og:title" content="Math Sigma">
-        <meta property="og:image" content="./images/sns-img.png">
-        <meta property="og:description" content="GUI 기반의 웹용 수식편집기">
-        <meta property="og:site_name" content="Math Sigma">
-        <title>Math Sigma</title>
-        <link rel="stylesheet" href="./css/style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-        <script defer src="./js/script.js"></script>
-        <script defer src="./js/gsap-ani.js"></script>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Math Sigma">
+    <meta property="og:image" content="./images/sns-img.png">
+    <meta property="og:description" content="GUI 기반의 웹용 수식편집기">
+    <meta property="og:site_name" content="Math Sigma">
+    <title>Math Sigma</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.polyfills.min.js"
+        referrerpolicy="no-referrer"></script>
+    <script defer src="./js/script.js"></script>
+</head>
+
 <body>
     <!-- Header -->
     <header>
@@ -123,18 +125,24 @@
             <div class="cont-wrap flex-lay">
                 <div class="address-wrap">
                     <img src="./images/logo-white.svg" alt="" class="footer-logo">
-                    <div class="address"><p><span>06748</span><span class="addr-text"> 서울시 서초구 강남대로 148, 3층 (양재동, 상록빌딩)</span></><a href="javascript:void(0)" class="copy-link"><img src="./images/ic-link.svg" alt=""></a></div>
+                    <div class="address">
+                        <p><span>06748</span><span class="addr-text"> 서울시 서초구 강남대로 148, 3층 (양재동, 상록빌딩)</span></><a
+                                href="javascript:void(0)" class="copy-link"><img src="./images/ic-link.svg" alt=""></a>
+                    </div>
                     <ul class="contact">
-                        <li><strong>TEL</strong>  <a href="tel:02-576-3776">02)576-3776</a></li>
-                        <li><strong>FAX</strong>  02)576-3741</li>
+                        <li><strong>TEL</strong> <a href="tel:02-576-3776">02)576-3776</a></li>
+                        <li><strong>FAX</strong> 02)576-3741</li>
                     </ul>
                     <p class="copyright">Copyrightⓒ 월드버텍(주), All Rights Reserved.</p>
                 </div>
                 <div class="side-wrap">
                     <div class="side-rink">
-                        <a href="https://www.facebook.com/WORLDVERTEX/" target="_blank"><img src="./images/ic-facebook.svg" alt=""></a>
-                        <a href="https://blog.naver.com/wvtex" target="_blank"><img src="./images/ic-blog.svg" alt=""></a>
-                        <a href="http://vtex.co.kr/vtex-renew/2022_D_company_introduction.pdf" target="_blank"><img src="./images/ic-download.svg" alt=""></a>
+                        <a href="https://www.facebook.com/WORLDVERTEX/" target="_blank"><img
+                                src="./images/ic-facebook.svg" alt=""></a>
+                        <a href="https://blog.naver.com/wvtex" target="_blank"><img src="./images/ic-blog.svg"
+                                alt=""></a>
+                        <a href="http://vtex.co.kr/vtex-renew/2022_D_company_introduction.pdf" target="_blank"><img
+                                src="./images/ic-download.svg" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -142,64 +150,65 @@
     </footer>
 
     <script>
-    window.addEventListener('load', () => {
-        // 에디터 선택 탭
-        const $selectBtnEl = document.querySelector('.select-btn');
-        const $tabButton = document.querySelector('.category');
-        const $tabButtonItem = document.querySelectorAll('.category li');
-        const $tabContents = document.querySelectorAll('.tab-contents');
-        const $demoEditor = document.querySelector('.demo-editor');
-        let activeClass = 'active';
+        window.addEventListener('load', () => {
+            // 에디터 선택 탭
+            const $selectBtnEl = document.querySelector('.select-btn');
+            const $tabButton = document.querySelector('.category');
+            const $tabButtonItem = document.querySelectorAll('.category li');
+            const $tabContents = document.querySelectorAll('.tab-contents');
+            const $demoEditor = document.querySelector('.demo-editor');
+            let activeClass = 'active';
 
-        tabSelect();
+            tabSelect();
 
-        $tabButtonItem[0].classList.add(activeClass);
-        $tabContents[0].classList.add(activeClass);
+            $tabButtonItem[0].classList.add(activeClass);
+            $tabContents[0].classList.add(activeClass);
 
-        function tabSelect() {
-            $selectBtnEl.addEventListener('click', (e) => {
-                let target = e.target;
-                let isOn = e.target.parentNode.classList.contains('on');
-                isOn ? target.parentNode.classList.remove('on') : target.parentNode.classList.add('on');
+            function tabSelect() {
+                $selectBtnEl.addEventListener('click', (e) => {
+                    let target = e.target;
+                    let isOn = e.target.parentNode.classList.contains('on');
+                    isOn ? target.parentNode.classList.remove('on') : target.parentNode.classList.add('on');
+                })
+
+                $tabButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (e.target.nodeName === 'UL') return;
+                    let target = e.target.closest("li");
+                    let targetHref = e.target.getAttribute('href');
+                    let targetText = e.target.textContent;
+                    let isOn = target?.classList.contains(activeClass);
+                    if (isOn) return;
+                    const nodes = [...target?.parentElement.children];
+                    const index = nodes.indexOf(target);
+                    $tabButton.querySelector('.active')?.classList.remove(activeClass)
+                    target.classList.add(activeClass);
+                    $demoEditor.querySelector('.active')?.classList.remove(activeClass)
+                    $tabContents[index].classList.add(activeClass)
+                    $selectBtnEl.textContent = targetText;
+                    $selectBtnEl.parentNode.classList.remove('on');
+                })
+            }
+
+            //클립보드
+            let Clipboard = new ClipboardJS('.clipBtn');
+
+            Clipboard.on('success', (e) => { //복사 완료 시
+                e.clearSelection();
+                e.trigger.textContent = 'Copied'
+                e.trigger.classList.add('success')
+
+                setTimeout(() => {
+                    e.trigger.textContent = 'Copy';
+                    e.trigger.classList.remove('success')
+                }, 1000)
+
             })
 
-            $tabButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (e.target.nodeName === 'UL') return;
-                let target = e.target.closest("li");
-                let targetHref = e.target.getAttribute('href');
-                let targetText = e.target.textContent;
-                let isOn = target?.classList.contains(activeClass);
-                if (isOn) return;
-                const nodes = [...target?.parentElement.children];
-                const index = nodes.indexOf(target);
-                $tabButton.querySelector('.active')?.classList.remove(activeClass)
-                target.classList.add(activeClass);
-                $demoEditor.querySelector('.active')?.classList.remove(activeClass)
-                $tabContents[index].classList.add(activeClass)
-                $selectBtnEl.textContent = targetText;
-                $selectBtnEl.parentNode.classList.remove('on');
-            })
-        }
-
-        //클립보드
-        let Clipboard = new ClipboardJS('.clipBtn');
-
-        Clipboard.on('success', (e) => { //복사 완료 시
-            e.clearSelection();
-            e.trigger.textContent = 'Copied'
-            e.trigger.classList.add('success')
-
-            setTimeout(() => {
-                e.trigger.textContent = 'Copy';
-                e.trigger.classList.remove('success')
-            }, 1000)
 
         })
 
-        
-    })
-
     </script>
 </body>
+
 </html>
