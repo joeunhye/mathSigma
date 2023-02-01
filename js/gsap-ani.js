@@ -1,19 +1,21 @@
 gsap.registerPlugin(ScrollTrigger);
+const $bodyEl = document.querySelector('body');
 
 //Section Gsap Common Control
-const anySectionEls = gsap.utils.toArray("section");
-anySectionEls.forEach((el, i) => {
-	ScrollTrigger.create({
-		trigger: el,
-		toggleClass: "active",
-		// start:"top 90%",
-		// end:"bottom 10%",
-		start: "center center",
-		end: "bottom top",
-		// markers: true,
-		// scrub:true,
-	});
-});
+// const anySectionEls = gsap.utils.toArray("section");
+// anySectionEls.forEach((el, i) => {
+// 	ScrollTrigger.create({
+// 		trigger: el,
+// 		// toggleClass: "active",
+// 		// start:"top 90%",
+// 		// end:"bottom 10%",
+// 		start: "top center",
+// 		end: "top top",
+// 		// markers: false,
+// 		// scrub:true,
+		
+// 	});
+// });
 
 //Section2 Gsap Control
 const anim = gsap.to(".sec02 .cont-sub-text, .sec02 h3, .sec02 .cont-text, .sec02 .sigma-items li", {
@@ -42,15 +44,15 @@ gsap.timeline({
 	},
 })
 	.from(".sec03 .anyText", {
-		y: innerHeight * 1,
+		y: innerHeight * 3,
 		stagger: {
-			amount: 0.5,
+			amount: 0.7,
 		},
 	})
 	.from(".sec03 .img-wrap img", {
-		y: innerHeight * 1,
+		y: innerHeight * 3,
 		stagger: {
-			amount: 0.5,
+			amount: 0.7,
 		},
 	});
 
@@ -64,11 +66,10 @@ const lineAny = gsap.to(".sec04 .line-bg", {
 gsap.timeline({
 	scrollTrigger: {
 		trigger: ".sec04",
-		start: "center center",
-		end: "bottom top",
-		scrub: 1,
-		toggleClass: "on",
-		pin: true,
+		start: "top bottom",
+		end: "top top",
+		scrub: 3,
+		pin: false,
 	},
 })
 	// .from(".sec04 .line-bg", {
@@ -76,26 +77,40 @@ gsap.timeline({
 	//     opacity: 0,
 	// })
 	.from(".sec04 .anyText", {
-		y: innerHeight * 1,
+		y: innerHeight * 2,
 		stagger: {
 			amount: 0.5,
 		},
 	})
 	.from(".sec04 .img-wrap img", {
-		y: innerHeight * 1,
+		y: innerHeight * 3,
 		stagger: {
-			amount: 0.5,
+			amount: 0.7,
 		},
 	});
 
 //Section5 Gsap Control
+ScrollTrigger.create({
+	trigger: ".sec05",
+	markers: true,
+	start: "top center",
+	end: "top top",
+	onEnter : function() {
+		$bodyEl.classList.add('reversal')
+		console.log('onEnter');
+	},
+	onLeaveBack : function() {
+		$bodyEl.classList.remove('reversal')
+		console.log('onLeaveBack');
+	}
+});
 gsap.timeline({
 	scrollTrigger: {
 		trigger: ".sec05",
-		start: "center center",
-		end: "bottom top",
-		scrub: 1,
-		pin: true,
+		start: "top bottom",
+		end: "top top",
+		scrub: 3,
+		pin: false,
 	},
 })
 	.from(".sec05.dark", {
