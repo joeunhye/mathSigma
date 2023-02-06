@@ -44,13 +44,17 @@ gsap.timeline({
 	},
 })
 	.from(".sec03 .anyText", {
-		y: innerHeight * 3,
+		y: innerHeight * 1,
+		autoAlpha: 0,
+		duration: 2,
 		stagger: {
 			amount: 0.7,
 		},
 	})
 	.from(".sec03 .img-wrap img", {
 		y: innerHeight * 3,
+		autoAlpha: 0,
+		duration: 2,
 		stagger: {
 			amount: 0.7,
 		},
@@ -77,13 +81,16 @@ gsap.timeline({
 	//     opacity: 0,
 	// })
 	.from(".sec04 .anyText", {
-		y: innerHeight * 2,
+		y: innerHeight * 1,
+		autoAlpha: 0,
+		duration: 2,
 		stagger: {
 			amount: 0.5,
 		},
 	})
 	.from(".sec04 .img-wrap img", {
 		y: innerHeight * 3,
+		duration: 1,
 		stagger: {
 			amount: 0.7,
 		},
