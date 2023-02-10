@@ -21,6 +21,18 @@ window.addEventListener('scroll', ()=> {
     size();
     changeHead();
     navigate();
+
+    if(scrollH > 100) {
+        $topBtn.classList.add('fade-in')
+    }else {
+        $topBtn.classList.remove('fade-in')
+    }
+})
+
+//TOP MOVE BTN
+const $topBtn = document.querySelector('.top-btn');
+$topBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });  
 })
 
 window.addEventListener('load', () =>  {
@@ -63,8 +75,3 @@ function navigate() {
     })
 }
 
-//TOP MOVE BTN
-const $topBtn = document.querySelector('.top-btn');
-$topBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });  
-})

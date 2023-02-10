@@ -131,7 +131,7 @@ header .header-in {display: flex;justify-content: space-between;height: 100%; al
 header nav ul {display: flex;height: 100%; align-items: center; gap: 50px;}
 header nav li a {font-size: 20px;}
 
-.navigate {position: fixed;top: 50%;right: 20px;z-index: 9;}
+.navigate {position: fixed;top: 50%;right: 20px;z-index: 9;transform: translateY(-50%);}
 .navigate-list {}
 .navigate li {}
 .navigate a {position: relative; display: inline-block; width: 100px; margin:10px 0;}
@@ -359,8 +359,9 @@ header.full nav ul li:nth-child(3) {animation-delay: .4s;}
 .clipBtn.success {background-color: var(--blue-color); color: #fff;}
 .code-copy-item .code-title {font-size: 20px;}
 
-.top-btn {z-index: 1;position: fixed;right: 10px;bottom: 10px;border: none;border-radius: 50%;width: 50px;height: 50px;border: 1px solid rgb(17 88 172);
-    background-color: var(--blue-color); box-shadow: 0px 3px 5px 1px rgb(0 0 0 / 20%);}
+.top-btn {opacity: 0; pointer-events: none;z-index: 1;position: fixed;right: 10px;bottom: 10px;border: none;border-radius: 50%;width: 50px;height: 50px;border: 1px solid rgb(17 88 172);
+    background-color: var(--blue-color); box-shadow: 0px 3px 5px 1px rgb(0 0 0 / 20%); transition: .3s all ease;}
+.top-btn.fade-in {opacity: 1;pointer-events: all;}
 
 /* Footer */
 footer {padding: 80px 0;background-color: #00489D;border-top: 1px solid #2261ac;font-weight: 300;color: #fff;}
@@ -417,6 +418,7 @@ footer select {width: 250px;height: 50px;background: none;border: 1px solid #D9D
 
 @media screen and (max-width:786px) {
     .cont-wrap.flex-lay {flex-direction: column;}
+    .navigate {display: none;}
 
     /* Header */
     header {height: 60px;}
