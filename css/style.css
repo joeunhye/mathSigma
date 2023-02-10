@@ -148,8 +148,10 @@ body.reversal .navigate a {color: #fff;}
 .active-section4 .navigate li:nth-child(4) a span {right:20px; opacity: 1;}
 .active-section5 .navigate li:nth-child(5) a {color:orange}
 .active-section5 .navigate li:nth-child(5) a span {right:20px; opacity: 1;}
+.active-section6 .navigate li:nth-child(6) a {color:#fff}
+.active-section6 .navigate li:nth-child(6) a span {right:20px; opacity: 1;}
 .active-section1 .navigate li:nth-child(1) a:after, .active-section2 .navigate li:nth-child(2) a:after, .active-section3 .navigate li:nth-child(3) a:after,
-.active-section4 .navigate li:nth-child(4) a:after, .active-section5 .navigate li:nth-child(5) a:after {transform: scale(2);background-color: rgb(62 62 62);}
+.active-section4 .navigate li:nth-child(4) a:after, .active-section5 .navigate li:nth-child(5) a:after, .active-section6 .navigate li:nth-child(6) a:after {transform: scale(2);background-color: rgb(62 62 62);}
 
 /*모바일 모드*/
 .trigger-btn {display: none;position: absolute;right: 15px;padding: 0;top:22px; width: 22px; height: 22px;}
