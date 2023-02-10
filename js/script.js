@@ -20,6 +20,11 @@ function size() {
 window.addEventListener('scroll', ()=> {
     size();
     changeHead();
+    navigate();
+})
+
+window.addEventListener('load', () =>  {
+    document.querySelector('body').classList.add('active-section1')
 })
 
 //모바일 메뉴
@@ -46,4 +51,20 @@ $addressBtnEls.addEventListener('click', function() {
     document.execCommand('copy');
     document.body.removeChild(textArea);
     alert('주소 복사 완료')
+})
+
+const $sections = document.querySelectorAll('section')
+function navigate() {
+    $sections.forEach(($section, i) => {
+        if (scrollH >= $section.offsetTop - (window.innerHeight / 2)) {
+            document.querySelector('body').className = "";
+            document.querySelector('body').classList.add(`active-section${i + 1}`)
+        }
+    })
+}
+
+//TOP MOVE BTN
+const $topBtn = document.querySelector('.top-btn');
+$topBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });  
 })

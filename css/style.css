@@ -134,9 +134,22 @@ header nav li a {font-size: 20px;}
 .navigate {position: fixed;top: 50%;right: 20px;z-index: 9;}
 .navigate-list {}
 .navigate li {}
-.navigate a {}
-.navigate a:hover {}
+.navigate a {position: relative; display: inline-block; width: 100px; margin:10px 0;}
+.navigate a:after {content: ''; position: absolute;width: 7px;height: 7px;background-color: #c1c1c1;border-radius: 50%;right: 0;top: 5px;bottom: 0;margin: auto;transition: .3s all ease;}
+.navigate a span {position: absolute;top:-5px; right:-100%;opacity: 0; transition: .2s all ease;}
 body.reversal .navigate a {color: #fff;}
+.active-section1 .navigate li:nth-child(1) a {color:#0042BF}
+.active-section1 .navigate li:nth-child(1) a span {right:20px; opacity: 1;}
+.active-section2 .navigate li:nth-child(2) a {color:#007BD5}
+.active-section2 .navigate li:nth-child(2) a span {right:20px; opacity: 1;}
+.active-section3 .navigate li:nth-child(3) a {color:#F8291E}
+.active-section3 .navigate li:nth-child(3) a span {right:20px; opacity: 1;}
+.active-section4 .navigate li:nth-child(4) a {color:#01E6A8}
+.active-section4 .navigate li:nth-child(4) a span {right:20px; opacity: 1;}
+.active-section5 .navigate li:nth-child(5) a {color:orange}
+.active-section5 .navigate li:nth-child(5) a span {right:20px; opacity: 1;}
+.active-section1 .navigate li:nth-child(1) a:after, .active-section2 .navigate li:nth-child(2) a:after, .active-section3 .navigate li:nth-child(3) a:after,
+.active-section4 .navigate li:nth-child(4) a:after, .active-section5 .navigate li:nth-child(5) a:after {transform: scale(2);background-color: rgb(62 62 62);}
 
 /*모바일 모드*/
 .trigger-btn {display: none;position: absolute;right: 15px;padding: 0;top:22px; width: 22px; height: 22px;}
@@ -343,6 +356,9 @@ header.full nav ul li:nth-child(3) {animation-delay: .4s;}
 .clipBtn {background: #D9DEEB;padding: 12px 35px;font-size: 18px;border-radius: 5px;transition: .3s all ease;}
 .clipBtn.success {background-color: var(--blue-color); color: #fff;}
 .code-copy-item .code-title {font-size: 20px;}
+
+.top-btn {z-index: 1;position: fixed;right: 10px;bottom: 10px;border: none;border-radius: 50%;width: 50px;height: 50px;border: 1px solid rgb(17 88 172);
+    background-color: var(--blue-color); box-shadow: 0px 3px 5px 1px rgb(0 0 0 / 20%);}
 
 /* Footer */
 footer {padding: 80px 0;background-color: #00489D;border-top: 1px solid #2261ac;font-weight: 300;color: #fff;}

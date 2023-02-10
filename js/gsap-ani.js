@@ -2,20 +2,21 @@ gsap.registerPlugin(ScrollTrigger);
 const $bodyEl = document.querySelector('body');
 
 //Section Gsap Common Control
-// const anySectionEls = gsap.utils.toArray("section");
-// anySectionEls.forEach((el, i) => {
-// 	ScrollTrigger.create({
-// 		trigger: el,
-// 		// toggleClass: "active",
-// 		// start:"top 90%",
-// 		// end:"bottom 10%",
-// 		start: "top center",
-// 		end: "top top",
-// 		// markers: false,
-// 		// scrub:true,
-		
-// 	});
-// });
+const anySectionEls = gsap.utils.toArray("section");
+anySectionEls.forEach((el, i) => {
+	anySectionEls.forEach((el,i)=>{
+		ScrollTrigger.create({
+			trigger:el,
+			toggleClass:'active',
+			// start:"top 90%",
+			// end:"bottom 10%",
+			start: "center center",
+			end: "bottom top",
+			// markers: true,
+			// scrub:true,
+		});
+	});
+});
 
 //Section2 Gsap Control
 const anim = gsap.to(".sec02 .cont-sub-text, .sec02 h3, .sec02 .cont-text, .sec02 .sigma-items li", {
@@ -29,7 +30,6 @@ ScrollTrigger.create({
 	trigger: ".sec02",
 	animation: anim,
 	toggleActions: "restart pause restart pause",
-	// markers: true,
 });
 
 //Section3 Gsap Control
@@ -99,16 +99,14 @@ gsap.timeline({
 //Section5 Gsap Control
 ScrollTrigger.create({
 	trigger: ".sec05",
-	markers: true,
+	// markers: true,
 	start: "top center",
 	end: "top top",
 	onEnter : function() {
 		$bodyEl.classList.add('reversal')
-		console.log('onEnter');
 	},
 	onLeaveBack : function() {
 		$bodyEl.classList.remove('reversal')
-		console.log('onLeaveBack');
 	}
 });
 gsap.timeline({
