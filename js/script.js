@@ -23,15 +23,15 @@ window.addEventListener('scroll', ()=> {
     navigate();
 
     if(scrollH > 100) {
-        $topBtn.classList.add('fade-in')
+        $topBtn?.classList.add('fade-in')
     }else {
-        $topBtn.classList.remove('fade-in')
+        $topBtn?.classList.remove('fade-in')
     }
 })
 
 //TOP MOVE BTN
 const $topBtn = document.querySelector('.top-btn');
-$topBtn.addEventListener('click', () => {
+$topBtn?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: "smooth" });  
 })
 
